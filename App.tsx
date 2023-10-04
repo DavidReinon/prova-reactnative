@@ -6,14 +6,20 @@
  */
 
 import React from 'react';
-import {ScrollView, StatusBar, StyleSheet, Text, View, TextInput} from 'react-native';
-import {Button} from 'react-native-paper';
+import {
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+} from 'react-native';
 
 const App = () => {
   return (
     <View>
-      <Text style={styles.sectionTitle}>Hola gente de yutub</>
-      <Button icon="camera-plus">Polsa</Button>
+      <Text style={styles.sectionTitle}>Texto</Text>
     </View>
   );
 };
