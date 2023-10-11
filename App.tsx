@@ -5,21 +5,33 @@
  * @format
  */
 
-import React from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-} from 'react-native';
+import React, {useState} from 'react';
+import {ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
+
+import {Button, TextInput} from 'react-native-paper';
 
 const App = () => {
+  const [text, setText] = useState('');
   return (
     <View>
-      <Text style={styles.sectionTitle}>Texto</Text>
+      <Text style={styles.sectionTitle}>Texto Inicial</Text>
+      <TextInput
+        label="Email"
+        value={text}
+        onChangeText={element => setText(element)}
+      />
+      <Button mode="text" icon="alien">
+        1
+      </Button>
+      <Button mode="outlined" icon="alien">
+        2
+      </Button>
+      <Button mode="contained" icon="alien">
+        3
+      </Button>
+      <Button mode="elevated" icon="alien">
+        4
+      </Button>
     </View>
   );
 };
