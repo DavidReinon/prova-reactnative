@@ -1,37 +1,30 @@
 import React from 'react';
+import {Provider as PaperProvider, TextInput} from 'react-native-paper';
+
 import {
   ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   View,
-  TextInput,
   Button,
 } from 'react-native';
 
+const nom = textAMostrar => {
+  return <Text style={{fontSize: 30}}>{textAMostrar}</Text>;
+};
+const dades = array => {
+  return array.map(unElement => {
+    <TextInput label={unElement} placeholder={unElement}></TextInput>;
+  });
+};
+let titulos = ['Email', 'Nom'];
 const App = () => {
   return (
-    <View>
-      <Text style={styles.sectionTitle}>Texto</Text>
-    </View>
+    <PaperProvider>
+      {nom('David Reinon')};{dades(titulos)};
+    </PaperProvider>
   );
 };
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+
 export default App;
