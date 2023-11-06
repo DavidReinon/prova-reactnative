@@ -6,6 +6,11 @@ const operacion = (pes: number, alçada: number) => {
   return pes / Math.pow(alçada / 100, 2);
 };
 
+const comprobarEntraPes = (unPes: Number) => {
+  const re = /^[0-9]+\.+$|^[0-9]+$/;
+  return re.test(unPes.toString());
+};
+
 const messatge = (resultat: number) => {
   let message = '';
   switch (true) {
@@ -43,12 +48,12 @@ interface Props {
   disabled: boolean;
 }
 
-const calcularIMG = (props: Props) => {
+const calcularIMC = (props: Props) => {
   const [colorInfo, setColorInfo] = useState('red');
   const result = operacion(props.pes, props.alçada);
   const message = messatge(result);
-  if (result < 27) setColorInfo('green');
-  if (result > 27 && result < 40) setColorInfo('yellow');
+  // if (result < 27) setColorInfo('green');
+  // if (result > 27 && result < 40) setColorInfo('yellow');
 
   if (props.disabled) return <View></View>;
   return (
@@ -70,4 +75,4 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 });
-export default calcularIMG;
+export default calcularIMC;

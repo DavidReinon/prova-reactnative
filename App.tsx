@@ -1,13 +1,18 @@
 import React from 'react';
 import {useState} from 'react';
-import {ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {Button, TextInput} from 'react-native-paper';
-import CalcularIMG from './components/CalcularIMG';
+import CalcularIMC from './components/CalcularIMC';
 
 const App = () => {
-  const [pes, setPes] = useState(0);
-  const [alçada, setAlçada] = useState(0);
+  const [informacio, setInformacio] = useState({pes: 0, alçada: 0});
+  const [resultatAMostrar, setResultatAMostrar] = useState({pes: 0, alçada: 0});
   const [desabilitarRespuesta, setDesabilitarRespuesta] = useState(true);
+
+  const definirProps = () => {
+    setDesabilitarRespuesta(false);
+    setResultatAMostrar({pes: informacio.pes, alçada: informacio.alçada});
+  };
 
   return (
     <View style={styles.sectionContainer}>
@@ -15,27 +20,27 @@ const App = () => {
       <TextInput
         style={styles.textInput}
         defaultValue=""
-        onChangeText={newText => setPes(parseInt(newText))}
+        onChangeText={newText =>
+          setInformacio({...informacio, pes: Number(newText)})
+        }
         placeholder="Pes"
-        // onPointerCancelCapture={() => setDesabilitarRespuesta(true)}
       />
       <TextInput
         style={styles.textInput}
         defaultValue=""
-        onChangeText={newText => setAlçada(parseInt(newText))}
+        onChangeText={newText =>
+          setInformacio({...informacio, alçada: Number(newText)})
+        }
         placeholder="Alçada"
-        // onPointerCancelCapture={() => setDesabilitarRespuesta(true)}
       />
-      <Button
-        icon="alien"
-        mode="contained"
-        onPress={() => setDesabilitarRespuesta(false)}>
+      <Button icon="alien" mode="contained" onPress={definirProps}>
         Calcula
       </Button>
-      <CalcularIMG
+      <CalcularIMC
         disabled={desabilitarRespuesta}
-        pes={pes}
-        alçada={alçada}></CalcularIMG>
+        pes={Number(resultatAMostrar.pes)}
+        alçada={Number(resultatAMostrar.alçada)}
+      />
     </View>
   );
 };
@@ -62,4 +67,5 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
+
 export default App;
