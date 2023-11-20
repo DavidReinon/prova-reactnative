@@ -12,16 +12,15 @@ const UnCicle = ({titol, descripcio, comunicacioPare, index}) => {
   const [estilReactiu, setEstilReactiu] = useState(styles.estilTargeta);
   const [clickat, setClickat] = useState(false);
 
-
   const cambiarEstilTargeta = () => {
     if (clickat) {
       setEstilReactiu(styles.estilTargeta);
       setClickat(false);
-      comunicacioPare({estat: false});
+      comunicacioPare({estat: false, curs: index});
     } else {
       setEstilReactiu(styles.estilTargetaSeleccionada);
       setClickat(true);
-      comunicacioPare({estat: true});
+      comunicacioPare({estat: true, curs: index});
     }
   };
   return (

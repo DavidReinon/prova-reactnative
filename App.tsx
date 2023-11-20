@@ -2,13 +2,16 @@ import React from 'react';
 import {useState} from 'react';
 import {ScrollView, StyleSheet, View, Text} from 'react-native';
 import UnCicle from './components/UnCicle';
+import LlistatProfesCicle from './components/LlistatProfesCicle';
 
 const App = () => {
   const [info, setInfo] = useState(require('./utils/dades.json'));
   const [targetaSeleccionada, setTargetaSeleccionada] = useState(false);
+  const [indexMostrar, setIndexMostrar] = useState(0);
 
-  const cambiarEstatTargeta = estat => {
+  const cambiarEstatTargeta = (estat, curs) => {
     setTargetaSeleccionada(estat);
+    setIndexMostrar(curs);
   };
 
   return (
@@ -31,7 +34,9 @@ const App = () => {
         </ScrollView>
       </View>
       <View style={styles.sectionProfesors}>
-            
+        <LlistatProfesCicle
+          cicleSeleccionat={indexMostrar}
+          dades={info}></LlistatProfesCicle>
       </View>
     </View>
   );
