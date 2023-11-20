@@ -1,37 +1,55 @@
 import React from 'react';
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-} from 'react-native';
+import {useState} from 'react';
+import {ScrollView, StyleSheet, View, Text} from 'react-native';
+import UnCicle from './components/UnCicle';
 
 const App = () => {
+  const [info, setInfo] = useState(require('./utils/dades.json'));
+  const [targetaSeleccionada, setTargetaSeleccionada] = useState(false);
+
+  const cambiarEstatTargeta = estat => {
+    setTargetaSeleccionada(estat);
+  };
+
   return (
-    <View>
-      <Text style={styles.sectionTitle}>Texto</Text>
+    <View style={{flex: 1}}>
+      <View style={styles.sectionCicle}>
+        <Text style={styles.sectionTitle}>Unitat TICS</Text>
+        <ScrollView horizontal={true}>
+          <View style={styles.contenidorTargetes}>
+            {info.unitatTics.map((element, index) => {
+              return (
+                <UnCicle
+                  key={index}
+                  index={index}
+                  comunicacioPare={cambiarEstatTargeta}
+                  titol={element.cicle}
+                  descripcio={element.nomCicle}></UnCicle>
+              );
+            })}
+          </View>
+        </ScrollView>
+      </View>
+      <View style={styles.sectionProfesors}>
+            
+      </View>
     </View>
   );
 };
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  contenidorTargetes: {
+    flexDirection: 'row',
+  },
+  sectionCicle: {
+    flex: 0.25,
+  },
+  sectionProfesors: {
+    flex: 1,
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+    textAlign: 'center',
   },
 });
 export default App;

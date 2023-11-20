@@ -1,0 +1,163 @@
+{
+    "unitatTics": [
+        {
+            "cicle": "DAM",
+            "nomCicle": "Desenvolupament d'Aplicacions Multiplataforma",
+            "curs": [
+                {
+                    "numCurs": "1r",
+                    "profes": [
+                        {
+                            "nom": "Salva",
+                            "foto": "bluetooth",
+                            "modul": "PRO",
+                            "nomCompletModul": "Programació",
+                            "horesSetmanals": 8
+                        },
+                        {
+                            "nom": "Javi",
+                            "foto": "camera",
+                            "modul": "FOL",
+                            "nomCompletModul": "Formació i orientació laboral",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Toni",
+                            "foto": "camera",
+                            "modul": "BD",
+                            "nomCompletModul": "Bases de dades",
+                            "horesSetmanals": 5
+                        },
+                        {
+                            "nom": "José Manuel",
+                            "foto": "heart",
+                            "modul": "LMSGI",
+                            "nomCompletModul": "Llenguatge de marques i sistemes de gestió de la informació",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Vicent",
+                            "foto": "shuffle",
+                            "modul": "SI",
+                            "nomCompletModul": "Sistemes informàtics",
+                            "horesSetmanals": 5
+                        },
+                        {
+                            "nom": "Raquel",
+                            "foto": "alarm",
+                            "modul": "ANG",
+                            "nomCompletModul": "Anglés tècnic",
+                            "horesSetmanals": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "cicle": "DAW",
+            "nomCicle": "Desenvolupament d'Aplicacions Web",
+            "curs": [
+                {
+                    "numCurs": "1r",
+                    "profes": [
+                        {
+                            "nom": "Pepe",
+                            "foto": "bluetooth",
+                            "modul": "PRO",
+                            "nomCompletModul": "Programació",
+                            "horesSetmanals": 8
+                        },
+                        {
+                            "nom": "Juan",
+                            "foto": "camera",
+                            "modul": "FOL",
+                            "nomCompletModul": "Formació i orientació laboral",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Luis",
+                            "foto": "camera",
+                            "modul": "BD",
+                            "nomCompletModul": "Bases de dades",
+                            "horesSetmanals": 5
+                        },
+                        {
+                            "nom": "Empar",
+                            "foto": "heart",
+                            "modul": "LMSGI",
+                            "nomCompletModul": "Llenguatge de marques i sistemes de gestió de la informació",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Laura",
+                            "foto": "shuffle",
+                            "modul": "SI",
+                            "nomCompletModul": "Sistemes informàtics",
+                            "horesSetmanals": 5
+                        },
+                        {
+                            "nom": "Noelia",
+                            "foto": "alarm",
+                            "modul": "ANG",
+                            "nomCompletModul": "Anglés tècnic",
+                            "horesSetmanals": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "cicle": "ASIR",
+            "nomCicle": "Administració de Sistemes Informàtics i Xarxes",
+            "curs": [
+                {
+                    "numCurs": "1r",
+                    "profes": [
+                        {
+                            "nom": "Rosa",
+                            "foto": "bluetooth",
+                            "modul": "GBD",
+                            "nomCompletModul": "Gestió de base de dades",
+                            "horesSetmanals": 5
+                        },
+                        {
+                            "nom": "Jaime",
+                            "foto": "camera",
+                            "modul": "PAX",
+                            "nomCompletModul": "Planificació i administració de xarxes",
+                            "horesSetmanals": 6
+                        },
+                        {
+                            "nom": "Pau",
+                            "foto": "camera",
+                            "modul": "ISO",
+                            "nomCompletModul": "Implantació de sistemes operatius",
+                            "horesSetmanals": 7
+                        },
+                        {
+                            "nom": "Pau",
+                            "foto": "heart",
+                            "modul": "FOH",
+                            "nomCompletModul": "Fonaments de hardware",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Caterina",
+                            "foto": "shuffle",
+                            "modul": "ANG",
+                            "nomCompletModul": "Anglés",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Carles",
+                            "foto": "alarm",
+                            "modul": "FOL",
+                            "nomCompletModul": "Formació i orientació laboral",
+                            "horesSetmanals": 3
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
