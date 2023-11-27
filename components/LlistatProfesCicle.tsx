@@ -3,15 +3,26 @@ import {View, Text} from 'react-native';
 import {Avatar} from 'react-native-paper';
 
 const LlistatProfesCicle = ({cicleSeleccionat, dades}) => {
-  if (cicleSeleccionat === undefined) cicleSeleccionat = 1;
+  console.log(cicleSeleccionat);
   return (
     <View>
-      {dades.unitatTics[cicleSeleccionat].curs[0].profes.map(element => {
-        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-          <Avatar.Icon size={24} icon={element.foto}></Avatar.Icon>
-          <Text>{element.nom}</Text>;
-        </View>;
-      })}
+      {cicleSeleccionat !== null &&
+        cicleSeleccionat !== undefined &&
+        dades.unitatTics[cicleSeleccionat].curs[0].profes.map(
+          (element, index) => {
+            if (!element) {
+              return null;
+            }
+            return (
+              <View
+                key={index}
+                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                <Avatar.Icon size={24} icon={element.foto} />
+                {element.nom && <Text>{element.nom}</Text>}
+              </View>
+            );
+          },
+        )}
     </View>
   );
 };

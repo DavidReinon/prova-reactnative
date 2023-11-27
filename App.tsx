@@ -6,12 +6,10 @@ import LlistatProfesCicle from './components/LlistatProfesCicle';
 
 const App = () => {
   const [info, setInfo] = useState(require('./utils/dades.json'));
-  const [targetaSeleccionada, setTargetaSeleccionada] = useState(false);
-  const [indexMostrar, setIndexMostrar] = useState(0);
+  const [targetaSeleccionada, setTargetaSeleccionada] = useState(null);
 
-  const cambiarEstatTargeta = (estat, curs) => {
-    setTargetaSeleccionada(estat);
-    setIndexMostrar(curs);
+  const targetaSeleccionadaFillPare = index => {
+    setTargetaSeleccionada(index);
   };
 
   return (
@@ -24,8 +22,11 @@ const App = () => {
               return (
                 <UnCicle
                   key={index}
-                  index={index}
-                  comunicacioPare={cambiarEstatTargeta}
+                  posicioAquestaTargeta={index}
+                  targetaSeleccionada={targetaSeleccionada}
+                  cambiarTargetaSeleccionadaFillPare={
+                    targetaSeleccionadaFillPare
+                  }
                   titol={element.cicle}
                   descripcio={element.nomCicle}></UnCicle>
               );
@@ -35,7 +36,7 @@ const App = () => {
       </View>
       <View style={styles.sectionProfesors}>
         <LlistatProfesCicle
-          cicleSeleccionat={indexMostrar}
+          cicleSeleccionat={targetaSeleccionada}
           dades={info}></LlistatProfesCicle>
       </View>
     </View>

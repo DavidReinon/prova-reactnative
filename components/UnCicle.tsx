@@ -8,25 +8,33 @@ import {
 } from 'react-native';
 import {Surface} from 'react-native-paper';
 
-const UnCicle = ({titol, descripcio, comunicacioPare, index}) => {
-  const [estilReactiu, setEstilReactiu] = useState(styles.estilTargeta);
-  const [clickat, setClickat] = useState(false);
+const UnCicle = ({
+  titol,
+  descripcio,
+  targetaSeleccionada,
+  cambiarTargetaSeleccionadaFillPare,
+  posicioAquestaTargeta,
+}) => {
+  //const [estilReactiu, setEstilReactiu] = useState(styles.estilTargeta);
 
-  const cambiarEstilTargeta = () => {
-    if (clickat) {
-      setEstilReactiu(styles.estilTargeta);
-      setClickat(false);
-      comunicacioPare({estat: false, curs: index});
-    } else {
-      setEstilReactiu(styles.estilTargetaSeleccionada);
-      setClickat(true);
-      comunicacioPare({estat: true, curs: index});
-    }
+  const funcioCambiarTargetaSeleccionada = () => {
+    cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta);
+
+    // if (targetaSeleccionadaFillPare === posicioAquestaTargeta) {
+    //   setEstilReactiu(styles.estilTargetaSeleccionada);
+    //   return;
+    // }
   };
   return (
     <View>
-      <TouchableOpacity onPress={cambiarEstilTargeta}>
-        <Surface style={estilReactiu} elevation={4}>
+      <TouchableOpacity onPress={funcioCambiarTargetaSeleccionada}>
+        <Surface
+          style={
+            targetaSeleccionada === posicioAquestaTargeta
+              ? styles.estilTargetaSeleccionada
+              : styles.estilTargeta
+          }
+          elevation={4}>
           <Text>{titol}</Text>
           <Text style={styles.sectionDescription}>{descripcio}</Text>
         </Surface>
