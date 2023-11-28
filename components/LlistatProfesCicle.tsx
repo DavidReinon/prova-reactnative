@@ -6,8 +6,7 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades}) => {
   console.log(cicleSeleccionat);
   return (
     <View>
-      {cicleSeleccionat !== null &&
-        cicleSeleccionat !== undefined &&
+      {cicleSeleccionat !== null ?
         dades.unitatTics[cicleSeleccionat].curs[0].profes.map(
           (element, index) => {
             if (!element) {
@@ -17,12 +16,12 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades}) => {
               <View
                 key={index}
                 style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Avatar.Icon size={24} icon={element.foto} />
+                <Avatar.Icon size={30} icon={element.foto} />
                 {element.nom && <Text>{element.nom}</Text>}
               </View>
             );
           },
-        )}
+        ) : <Text>Selecciona un cicle. Sempre es visualitzaran el profes de 1r curs.</Text>}
     </View>
   );
 };

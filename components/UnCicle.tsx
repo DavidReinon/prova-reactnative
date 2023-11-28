@@ -6,7 +6,7 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
-import {Surface} from 'react-native-paper';
+import {Surface, Avatar} from 'react-native-paper';
 
 const UnCicle = ({
   titol,
@@ -17,17 +17,9 @@ const UnCicle = ({
 }) => {
   //const [estilReactiu, setEstilReactiu] = useState(styles.estilTargeta);
 
-  const funcioCambiarTargetaSeleccionada = () => {
-    cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta);
-
-    // if (targetaSeleccionadaFillPare === posicioAquestaTargeta) {
-    //   setEstilReactiu(styles.estilTargetaSeleccionada);
-    //   return;
-    // }
-  };
   return (
     <View>
-      <TouchableOpacity onPress={funcioCambiarTargetaSeleccionada}>
+      <TouchableOpacity onPress={() => cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta)}>
         <Surface
           style={
             targetaSeleccionada === posicioAquestaTargeta
@@ -37,6 +29,14 @@ const UnCicle = ({
           elevation={4}>
           <Text>{titol}</Text>
           <Text style={styles.sectionDescription}>{descripcio}</Text>
+          {targetaSeleccionada === posicioAquestaTargeta ? (
+            <View style={{alignItems: 'flex-end'}}>
+              <Avatar.Image
+                size={16}
+                source={require('../assets/tickCorrecte.png')}
+              />
+            </View>
+          ) : null}
         </Surface>
       </TouchableOpacity>
     </View>
