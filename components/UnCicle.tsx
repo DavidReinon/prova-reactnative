@@ -19,7 +19,10 @@ const UnCicle = ({
 
   return (
     <View>
-      <TouchableOpacity onPress={() => cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta)}>
+      <TouchableOpacity
+        onPress={() =>
+          cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta)
+        }>
         <Surface
           style={
             targetaSeleccionada === posicioAquestaTargeta
