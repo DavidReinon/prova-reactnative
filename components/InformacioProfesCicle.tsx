@@ -11,8 +11,6 @@ const InformacioProfesCicle = ({foto, modul, nom, horesSetmanals}) => {
             flex: 1,
             flexDirection: 'row',
             justifyContent: 'center',
-            borderColor: 'black',
-            borderWidth: 2,
           }}>
           <Text style={{margin: 5}}>{modul}</Text>
           <Avatar.Icon style={{margin: 5}} size={30} icon={foto} />

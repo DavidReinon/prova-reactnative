@@ -18,7 +18,7 @@ const UnCicle = ({
   //const [estilReactiu, setEstilReactiu] = useState(styles.estilTargeta);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{borderColor: 'maroon', borderWidth: 5}}>
       <TouchableOpacity
         onPress={() =>
           cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta)
@@ -32,14 +32,14 @@ const UnCicle = ({
           elevation={4}>
           <Text>{titol}</Text>
           <Text style={styles.sectionDescription}>{descripcio}</Text>
-          {targetaSeleccionada === posicioAquestaTargeta ? (
+          {targetaSeleccionada === posicioAquestaTargeta && (
             <View style={{alignItems: 'flex-end'}}>
               <Avatar.Image
                 size={16}
                 source={require('../assets/tickCorrecte.png')}
               />
             </View>
-          ) : null}
+          )}
         </Surface>
       </TouchableOpacity>
     </View>
@@ -49,7 +49,9 @@ const UnCicle = ({
 const styles = StyleSheet.create({
   estilTargeta: {
     width: Dimensions.get('window').width / 3,
-    //flex: 1,
+    height: 100,
+    alignContent: 'stretch',
+    alignItems: 'stretch',
     margin: 5,
     padding: 3,
     borderColor: 'black',
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
   },
   estilTargetaSeleccionada: {
     width: Dimensions.get('window').width / 3,
+    height: 100,
     margin: 5,
     padding: 3,
     borderColor: 'black',

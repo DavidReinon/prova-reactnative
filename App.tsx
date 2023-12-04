@@ -16,8 +16,9 @@ const App = () => {
     <View style={{flex: 1}}>
       <View style={styles.sectionCicle}>
         <Text style={styles.sectionTitle}>Unitat TICS</Text>
-        <ScrollView horizontal={true}>
-          <View style={styles.contenidorTargetes}>
+
+        <View style={styles.contenidorTargetes}>
+          <ScrollView horizontal={true}>
             {info.unitatTics.map((element, index) => {
               return (
                 <UnCicle
@@ -31,8 +32,8 @@ const App = () => {
                   descripcio={element.nomCicle}></UnCicle>
               );
             })}
-          </View>
-        </ScrollView>
+          </ScrollView>
+        </View>
       </View>
       <View style={styles.sectionProfesors}>
         <LlistatProfesCicle
@@ -44,14 +45,14 @@ const App = () => {
 };
 const styles = StyleSheet.create({
   contenidorTargetes: {
+    backgroundColor:'red',
     flexDirection: 'row',
   },
   sectionCicle: {
-    flex: 0.30,
+    flex: 0.3,
   },
   sectionProfesors: {
-    flex: 1,
-    borderColor: "red",
+    borderColor: 'red',
     borderWidth: 3,
   },
   sectionTitle: {
