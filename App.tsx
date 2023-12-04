@@ -47,10 +47,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   sectionCicle: {
-    flex: 0.25,
+    flex: 0.30,
   },
   sectionProfesors: {
     flex: 1,
+    borderColor: "red",
+    borderWidth: 3,
   },
   sectionTitle: {
     fontSize: 24,

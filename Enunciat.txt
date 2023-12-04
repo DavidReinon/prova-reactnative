@@ -1,0 +1,5 @@
+Rediseñár la informacio del profesors amb un nou component que represente
+foto modul nomComplet horesSetmana.
+
+Añadir un switch para elegir mostrar informacio del json de 1er curs o 2nd 
+curs: sols per a DAM!!

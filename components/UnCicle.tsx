@@ -18,7 +18,7 @@ const UnCicle = ({
   //const [estilReactiu, setEstilReactiu] = useState(styles.estilTargeta);
 
   return (
-    <View>
+    <View style={{flex: 1}}>
       <TouchableOpacity
         onPress={() =>
           cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta)
@@ -49,6 +49,7 @@ const UnCicle = ({
 const styles = StyleSheet.create({
   estilTargeta: {
     width: Dimensions.get('window').width / 3,
+    //flex: 1,
     margin: 5,
     padding: 3,
     borderColor: 'black',

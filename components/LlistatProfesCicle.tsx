@@ -1,27 +1,44 @@
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import {Avatar} from 'react-native-paper';
+import InformacioProfesCicle from './InformacioProfesCicle';
 
 const LlistatProfesCicle = ({cicleSeleccionat, dades}) => {
-  console.log(cicleSeleccionat);
+  // console.log(cicleSeleccionat);
+  const [cursSeleccionat, setCursSeleccionat] = useState(0);
   return (
-    <View>
-      {cicleSeleccionat !== null ?
-        dades.unitatTics[cicleSeleccionat].curs[0].profes.map(
-          (element, index) => {
-            if (!element) {
+    <View style={{flex: 1, flexDirection: 'row', borderColor: 'yellow', borderWidth: 2}}>
+      {cicleSeleccionat !== null ? (
+        dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat].profes.map(
+          (unProfe, index) => {
+            if (!unProfe) {
               return null;
             }
             return (
               <View
                 key={index}
-                style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Avatar.Icon size={30} icon={element.foto} />
-                {element.nom && <Text>{element.nom}</Text>}
+                style={{
+                  flex: 1,
+                  flexWrap: 'wrap',
+                  flexDirection: 'row',
+                  borderColor: 'blue',
+                  borderWidth: 2,
+                }}>
+                <InformacioProfesCicle
+                  foto={unProfe.foto}
+                  modul={unProfe.modul}
+                  horesSetmanals={unProfe.horesSetmanals}
+                  nom={unProfe.nom}
+                />
               </View>
             );
           },
-        ) : <Text>Selecciona un cicle. Sempre es visualitzaran el profes de 1r curs.</Text>}
+        )
+      ) : (
+        <Text>
+          Selecciona un cicle. Sempre es visualitzaran el profes de 1r curs.
+        </Text>
+      )}
     </View>
   );
 };
