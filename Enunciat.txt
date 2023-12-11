@@ -1,5 +1,8 @@
 Rediseñár la informacio del profesors amb un nou component que represente
-foto modul nomComplet horesSetmana.
+foto modul nomComplet horesSetmana:
+    - Posar els icons (fotos) tots en la mateixa linea vertical
+    - Rediseñar bonico la tarjeta
+    - Probar nous components de ract-native-paper
 
 Añadir un switch para elegir mostrar informacio del json de 1er curs o 2nd 
 curs: sols per a DAM!!
