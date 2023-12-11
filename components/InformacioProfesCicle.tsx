@@ -4,13 +4,11 @@ import {Avatar, Surface, Badge} from 'react-native-paper';
 
 const InformacioProfesCicle = ({foto, modul, nom, horesSetmanals}) => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, flexDirection: 'column'}}>
       <Surface style={styles.estilTargeta} elevation={4}>
+        {/* Imatge */}
         <View style={{flex: 0.7}}>
-          <Image
-            source={require('../assets/prueba.jpg')}
-            style={styles.imagen}
-          />
+          <Image source={require('../assets/logo.png')} style={styles.imagen} />
         </View>
         {/* Tot el text */}
         <View style={{flex: 1}}>
@@ -26,7 +24,13 @@ const InformacioProfesCicle = ({foto, modul, nom, horesSetmanals}) => {
                 alignItems: 'flex-end',
                 justifyContent: 'center',
               }}>
-              <Text style={{margin: 5, fontWeight: 'bold', color: '#6F3F87'}}>
+              <Text
+                style={{
+                  margin: 5,
+                  fontWeight: 'bold',
+                  fontSize: 15,
+                  color: '#6F3F87',
+                }}>
                 {modul}
               </Text>
             </View>
@@ -37,7 +41,7 @@ const InformacioProfesCicle = ({foto, modul, nom, horesSetmanals}) => {
               <Badge size={23}>{horesSetmanals}</Badge>
             </View>
           </View>
-          <Text style={{textAlign: 'center'}}>{nom}</Text>
+          <Text style={{textAlign: 'center', fontSize: 17,}}>{nom}</Text>
           {/* <Text>Hores setmanals: {horesSetmanals}</Text> */}
         </View>
       </Surface>
@@ -47,14 +51,16 @@ const InformacioProfesCicle = ({foto, modul, nom, horesSetmanals}) => {
 const styles = StyleSheet.create({
   estilTargeta: {
     flex: 1,
+    flexDirection: 'row',
     margin: 5,
     padding: 3,
     borderColor: 'black',
-    borderWidth: 1,
+    borderWidth: 2,
     borderRadius: 9,
   },
   imagen: {
-    flex: 1,
+    flex: 0.8,
+    resizeMode: 'contain',
     width: null,
     height: null,
   },
