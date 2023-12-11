@@ -1,6 +1,6 @@
 {
     "unitatTics": [
-        {
+        {   
             "cicle": "DAM",
             "nomCicle": "Desenvolupament d'Aplicacions Multiplataforma",
             "curs": [
@@ -13,6 +13,53 @@
                             "modul": "PRO",
                             "nomCompletModul": "Programació",
                             "horesSetmanals": 8
+                        },
+                        {
+                            "nom": "Javi",
+                            "foto": "camera",
+                            "modul": "FOL",
+                            "nomCompletModul": "Formació i orientació laboral",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Toni",
+                            "foto": "camera",
+                            "modul": "BD",
+                            "nomCompletModul": "Bases de dades",
+                            "horesSetmanals": 5
+                        },
+                        {
+                            "nom": "José Manuel",
+                            "foto": "heart",
+                            "modul": "LMSGI",
+                            "nomCompletModul": "Llenguatge de marques i sistemes de gestió de la informació",
+                            "horesSetmanals": 3
+                        },
+                        {
+                            "nom": "Vicent",
+                            "foto": "shuffle",
+                            "modul": "SI",
+                            "nomCompletModul": "Sistemes informàtics",
+                            "horesSetmanals": 5
+                        },
+                        {
+                            "nom": "Raquel",
+                            "foto": "alarm",
+                            "modul": "ANG",
+                            "nomCompletModul": "Anglés tècnic",
+                            "horesSetmanals": 3
+                        }
+                    ]
+                },
+                {
+                    "numCurs": "2n",
+                    "profes": [
+                        {
+                            "nom": "Roberto",
+                            "foto": "bluetooth",
+                            "modul": "JAVA",
+                            "nomCompletModul": "Programació",
+                            "horesSetmanals": 10
                         },
                         {
                             "nom": "Javi",

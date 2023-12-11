@@ -1,15 +1,20 @@
 import React, {useState} from 'react';
 import {View, Text} from 'react-native';
-import {Avatar} from 'react-native-paper';
 import InformacioProfesCicle from './InformacioProfesCicle';
 
-const LlistatProfesCicle = ({cicleSeleccionat, dades}) => {
+const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
   // console.log(cicleSeleccionat);
-  const [cursSeleccionat, setCursSeleccionat] = useState(0);
   return (
-    <View style={{flex: 1, flexDirection: 'column', flexWrap: 'wrap', borderColor: 'black', borderWidth: 2}}>
+    <View
+      style={{
+        flex: 1,
+        flexDirection: 'column',
+        flexWrap: 'wrap',
+        borderColor: 'black',
+        borderWidth: 2,
+      }}>
       {cicleSeleccionat !== null ? (
-        dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat].profes.map(
+        dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1].profes.map(
           (unProfe, index) => {
             if (!unProfe) {
               return null;
