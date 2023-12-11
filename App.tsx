@@ -16,7 +16,6 @@ const App = () => {
     <View style={{flex: 1}}>
       <View style={styles.sectionCicle}>
         <Text style={styles.sectionTitle}>Unitat TICS</Text>
-
         <View style={styles.contenidorTargetes}>
           <ScrollView horizontal={true}>
             {info.unitatTics.map((element, index) => {
@@ -54,6 +53,7 @@ const styles = StyleSheet.create({
   sectionProfesors: {
     borderColor: 'red',
     borderWidth: 3,
+    flex: 1,
   },
   sectionTitle: {
     fontSize: 24,

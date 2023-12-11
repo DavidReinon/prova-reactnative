@@ -7,7 +7,7 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades}) => {
   // console.log(cicleSeleccionat);
   const [cursSeleccionat, setCursSeleccionat] = useState(0);
   return (
-    <View style={{flex: 1, flexDirection: 'column', flexWrap: 'wrap', borderColor: 'yellow', borderWidth: 2}}>
+    <View style={{flex: 1, flexDirection: 'column', flexWrap: 'wrap', borderColor: 'black', borderWidth: 2}}>
       {cicleSeleccionat !== null ? (
         dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat].profes.map(
           (unProfe, index) => {
@@ -20,8 +20,8 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades}) => {
                 style={{
                   flex: 1,
                   flexDirection: 'row',
-                  borderColor: 'blue',
-                  borderWidth: 2,
+                  // borderColor: 'blue',
+                  // borderWidth: 1,
                 }}>
                 <InformacioProfesCicle
                   foto={unProfe.foto}
