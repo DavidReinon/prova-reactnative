@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -18,7 +18,7 @@ const UnCicle = ({
   //const [estilReactiu, setEstilReactiu] = useState(styles.estilTargeta);
 
   return (
-    <View style={{borderColor: 'maroon', borderWidth: 5}}>
+    <View>
       <TouchableOpacity
         onPress={() =>
           cambiarTargetaSeleccionadaFillPare(posicioAquestaTargeta)

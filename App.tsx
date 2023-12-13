@@ -50,11 +50,20 @@ const App = () => {
         <View
           style={{
             flex: 0.1,
+            flexDirection: 'row',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'grey',
+            // backgroundColor: 'grey',
           }}>
+          <Text
+            style={switchActiu ? styles.fontStyle : styles.SelectedFontSyle}>
+            1º
+          </Text>
           <Switch value={switchActiu} onValueChange={interruptor} />
+          <Text
+            style={switchActiu ? styles.SelectedFontSyle : styles.fontStyle}>
+            2º
+          </Text>
         </View>
       )}
       <View style={styles.sectionProfesors}>
@@ -69,21 +78,29 @@ const App = () => {
 };
 const styles = StyleSheet.create({
   contenidorTargetes: {
-    backgroundColor: 'red',
+    //backgroundColor: 'red',
     flexDirection: 'row',
   },
   sectionCicle: {
     flex: 0.3,
   },
   sectionProfesors: {
-    borderColor: 'red',
-    borderWidth: 3,
+    // borderColor: 'red',
+    // borderWidth: 3,
     flex: 1,
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
     textAlign: 'center',
+  },
+  fontStyle: {
+    fontSize: 20,
+  },
+  SelectedFontSyle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#6F3F87',
   },
 });
 export default App;

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text} from 'react-native';
 import InformacioProfesCicle from './InformacioProfesCicle';
 
@@ -10,8 +10,6 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
         flex: 1,
         flexDirection: 'column',
         flexWrap: 'wrap',
-        borderColor: 'black',
-        borderWidth: 2,
       }}>
       {cicleSeleccionat !== null ? (
         dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1].profes.map(
