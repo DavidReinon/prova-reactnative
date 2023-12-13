@@ -3,7 +3,15 @@ import {View, Text} from 'react-native';
 import InformacioProfesCicle from './InformacioProfesCicle';
 
 const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
-  // console.log(cicleSeleccionat);
+  if (cicleSeleccionat == null) {
+    return;
+  }
+  if (
+    dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1] === undefined
+  ) {
+    cursSeleccionat = 1;
+  }
+
   return (
     <View
       style={{
@@ -14,9 +22,6 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
       {cicleSeleccionat !== null ? (
         dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1].profes.map(
           (unProfe, index) => {
-            if (!unProfe) {
-              return null;
-            }
             return (
               <View
                 key={index}

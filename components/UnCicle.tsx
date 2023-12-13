@@ -49,7 +49,6 @@ const UnCicle = ({
 const styles = StyleSheet.create({
   estilTargeta: {
     width: Dimensions.get('window').width / 3,
-    height: 100,
     alignContent: 'stretch',
     alignItems: 'stretch',
     margin: 5,
