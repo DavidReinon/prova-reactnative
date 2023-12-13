@@ -4,47 +4,64 @@ import {Avatar, Surface, Badge} from 'react-native-paper';
 
 const InformacioProfesCicle = ({foto, modul, nom, horesSetmanals}) => {
   return (
-    <View style={{flex: 1, flexDirection: 'column'}}>
-      <Surface style={styles.estilTargeta} elevation={4}>
-        {/* Imatge */}
-        <View style={{flex: 0.7}}>
-          <Image source={require('../assets/logo.png')} style={styles.imagen} />
-        </View>
-        {/* Tot el text */}
-        <View style={{flex: 1}}>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'center',
-            }}>
+    <View style={{flex: 1, flexDirection: 'row'}}>
+      <View style={{flex: 0.1, flexDirection: 'column'}}>
+        <Avatar.Image
+          style={{margin: 3}}
+          size={30}
+          source={require('../assets/IconPapelera.png')}
+        />
+        <Avatar.Image
+          style={{margin: 3}}
+          size={30}
+          source={require('../assets/IconPencil.png')}
+        />
+      </View>
+      <View style={{flex: 1, flexDirection: 'column'}}>
+        <Surface style={styles.estilTargeta} elevation={4}>
+          {/* Imatge */}
+          <View style={{flex: 0.7}}>
+            <Image
+              source={require('../assets/logo.png')}
+              style={styles.imagen}
+            />
+          </View>
+          {/* Tot el text */}
+          <View style={{flex: 1}}>
             <View
               style={{
                 flex: 1,
-                alignItems: 'flex-end',
+                flexDirection: 'row',
                 justifyContent: 'center',
               }}>
-              <Text
+              <View
                 style={{
-                  margin: 5,
-                  fontWeight: 'bold',
-                  fontSize: 15,
-                  color: '#6F3F87',
+                  flex: 1,
+                  alignItems: 'flex-end',
+                  justifyContent: 'center',
                 }}>
-                {modul}
-              </Text>
+                <Text
+                  style={{
+                    margin: 5,
+                    fontWeight: 'bold',
+                    fontSize: 15,
+                    color: '#6F3F87',
+                  }}>
+                  {modul}
+                </Text>
+              </View>
+              <View style={{flex: 0.8, justifyContent: 'center'}}>
+                <Avatar.Icon style={{margin: 5}} size={30} icon={foto} />
+              </View>
+              <View>
+                <Badge size={23}>{horesSetmanals}</Badge>
+              </View>
             </View>
-            <View style={{flex: 0.8, justifyContent: 'center'}}>
-              <Avatar.Icon style={{margin: 5}} size={30} icon={foto} />
-            </View>
-            <View>
-              <Badge size={23}>{horesSetmanals}</Badge>
-            </View>
+            <Text style={{textAlign: 'center', fontSize: 17}}>{nom}</Text>
+            {/* <Text>Hores setmanals: {horesSetmanals}</Text> */}
           </View>
-          <Text style={{textAlign: 'center', fontSize: 17,}}>{nom}</Text>
-          {/* <Text>Hores setmanals: {horesSetmanals}</Text> */}
-        </View>
-      </Surface>
+        </Surface>
+      </View>
     </View>
   );
 };
