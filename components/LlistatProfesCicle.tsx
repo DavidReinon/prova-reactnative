@@ -3,13 +3,12 @@ import {View, Text} from 'react-native';
 import InformacioProfesCicle from './InformacioProfesCicle';
 
 const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
-  if (cicleSeleccionat == null) {
-    return;
-  }
-  if (
-    dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1] === undefined
-  ) {
-    cursSeleccionat = 1;
+  if (cicleSeleccionat !== null) {
+    if (
+      dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1] === undefined
+    ) {
+      cursSeleccionat = 1;
+    }
   }
 
   return (
