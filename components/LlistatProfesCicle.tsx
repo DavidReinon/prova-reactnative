@@ -12,7 +12,7 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
   }
 
   return (
-    <View>
+    <View style={{flex: 1}}>
       {cicleSeleccionat !== null ? (
         <FlatList
           data={
