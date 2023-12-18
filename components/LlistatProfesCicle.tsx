@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import InformacioProfesCicle from './InformacioProfesCicle';
 
 const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
@@ -12,35 +12,43 @@ const LlistatProfesCicle = ({cicleSeleccionat, dades, cursSeleccionat}) => {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        flexDirection: 'column',
-        flexWrap: 'wrap',
-      }}>
+    <View>
       {cicleSeleccionat !== null ? (
-        dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1].profes.map(
-          (unProfe, index) => {
-            return (
-              <View
-                key={index}
-                style={{
-                  flex: 1,
-                  flexDirection: 'row',
-                  // borderColor: 'blue',
-                  // borderWidth: 1,
-                }}>
-                <InformacioProfesCicle
-                  foto={unProfe.foto}
-                  modul={unProfe.modul}
-                  horesSetmanals={unProfe.horesSetmanals}
-                  nom={unProfe.nom}
-                />
-              </View>
-            );
-          },
-        )
+        <FlatList
+          data={
+            dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1].profes
+          }
+          keyExtractor={(item, index) => item.nom + ' - ' + index.toString()}
+          renderItem={({item}) => (
+            <InformacioProfesCicle
+              foto={item.foto}
+              modul={item.modul}
+              horesSetmanals={item.horesSetmanals}
+              nom={item.nom}
+            />
+          )}></FlatList>
       ) : (
+        // dades.unitatTics[cicleSeleccionat].curs[cursSeleccionat - 1].profes.map(
+        //   (unProfe, index) => {
+        //     return (
+        //       <View
+        //         key={index}
+        //         style={{
+        //           flex: 1,
+        //           flexDirection: 'row',
+        //           // borderColor: 'blue',
+        //           // borderWidth: 1,
+        //         }}>
+        //         <InformacioProfesCicle
+        //           foto={unProfe.foto}
+        //           modul={unProfe.modul}
+        //           horesSetmanals={unProfe.horesSetmanals}
+        //           nom={unProfe.nom}
+        //         />
+        //       </View>
+        //     );
+        //   },
+        // )
         <Text>
           Selecciona un cicle. Sempre es visualitzaran el profes de 1r curs.
         </Text>
