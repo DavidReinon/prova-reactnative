@@ -1,70 +1,98 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import {Avatar, Surface, Badge} from 'react-native-paper';
+import {
+  Avatar,
+  Surface,
+  Badge,
+  TouchableRipple,
+  Provider as PaperProvider,
+  Portal,
+  Modal,
+} from 'react-native-paper';
+import ModalEditarProfes from './ModalEditarProfes';
 
 const InformacioProfesCicle = ({foto, modul, nom, horesSetmanals}) => {
+  const [visible, setVisible] = useState(false);
+
+  const showModal = () => setVisible(true);
+  const hideModal = () => setVisible(false);
+
+  const cancelar = () => {
+    hideModal();
+  };
+
   return (
-    <View style={{flex: 1, flexDirection: 'row'}}>
-      <View style={{flex: 0.1, flexDirection: 'column'}}>
-        <Avatar.Image
-          style={{margin: 3}}
-          size={30}
-          source={require('../assets/IconPapelera.png')}
-        />
-        <Avatar.Image
-          style={{margin: 3}}
-          size={30}
-          source={require('../assets/IconPencil.png')}
-        />
-      </View>
-      <View style={{flex: 1, flexDirection: 'column'}}>
-        <Surface style={styles.estilTargeta} elevation={4}>
-          {/* Imatge */}
-          <View style={{flex: 0.7}}>
-            <Image
-              source={require('../assets/logo.png')}
-              style={styles.imagen}
-            />
-          </View>
-          {/* Tot el text */}
-          <View style={{flex: 1}}>
-            <View
-              style={{
-                flex: 1,
-                flexDirection: 'row',
-                justifyContent: 'center',
-              }}>
+    <TouchableRipple rippleColor="violet" onPress={() => showModal()}>
+      <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={{flex: 0.1, flexDirection: 'column'}}>
+          <Avatar.Image
+            style={{margin: 3}}
+            size={30}
+            source={require('../assets/IconPapelera.png')}
+          />
+          <Avatar.Image
+            style={{margin: 3}}
+            size={30}
+            source={require('../assets/IconPencil.png')}
+          />
+        </View>
+        <View style={{flex: 1, flexDirection: 'column'}}>
+          <Surface style={styles.estilTargeta} elevation={4}>
+            {/* Imatge */}
+            <View style={{flex: 0.7}}>
+              <Image
+                source={require('../assets/logo.png')}
+                style={styles.imagen}
+              />
+            </View>
+            {/* Tot el text */}
+            <View style={{flex: 1}}>
               <View
                 style={{
                   flex: 1,
-                  alignItems: 'flex-end',
+                  flexDirection: 'row',
                   justifyContent: 'center',
                 }}>
-                <Text
+                <View
                   style={{
-                    margin: 5,
-                    fontWeight: 'bold',
-                    fontSize: 15,
-                    color: '#6F3F87',
+                    flex: 1,
+                    alignItems: 'flex-end',
+                    justifyContent: 'center',
                   }}>
-                  {modul}
-                </Text>
+                  <Text
+                    style={{
+                      margin: 5,
+                      fontWeight: 'bold',
+                      fontSize: 15,
+                      color: '#6F3F87',
+                    }}>
+                    {modul}
+                  </Text>
+                </View>
+                <View style={{flex: 0.8, justifyContent: 'center'}}>
+                  <Avatar.Icon style={{margin: 5}} size={30} icon={foto} />
+                </View>
+                <View>
+                  <Badge size={23}>{horesSetmanals}</Badge>
+                </View>
               </View>
-              <View style={{flex: 0.8, justifyContent: 'center'}}>
-                <Avatar.Icon style={{margin: 5}} size={30} icon={foto} />
-              </View>
-              <View>
-                <Badge size={23}>{horesSetmanals}</Badge>
-              </View>
+              <Text style={{textAlign: 'center', fontSize: 17}}>{nom}</Text>
             </View>
-            <Text style={{textAlign: 'center', fontSize: 17}}>{nom}</Text>
-            {/* <Text>Hores setmanals: {horesSetmanals}</Text> */}
-          </View>
-        </Surface>
+          </Surface>
+        </View>
+        <Portal>
+          <Modal
+            visible={visible}
+            onDismiss={hideModal}
+            contentContainerStyle={styles.modalStyle}>
+            <ModalEditarProfes Cancelar={cancelar}></ModalEditarProfes>
+          </Modal>
+        </Portal>
       </View>
-    </View>
+    </TouchableRipple>
   );
 };
+
 const styles = StyleSheet.create({
   estilTargeta: {
     flex: 1,
@@ -80,5 +108,7 @@ const styles = StyleSheet.create({
     width: null,
     height: null,
   },
+  modalStyle: {flex: 0.8, backgroundColor: 'white', padding: 20},
 });
+
 export default InformacioProfesCicle;
